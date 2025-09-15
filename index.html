@@ -46,7 +46,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                              <a href="index.html"><img src="images/logo_ritavi.png" alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -59,28 +59,27 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item active">
-                                 <a class="nav-link" href="index.html">Home</a>
+                                 <a id="nav-inicio"class="nav-link" href="index.html">Inicio</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="about.html">About</a>
+                                 <a id="nav-aeropuerto" class="nav-link" href="about.html">Aeropuerto</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="glasses.html">Our Glasses</a>
+                                 <a id="nav-aparcamiento" class="nav-link" href="glasses.html">¿Aparcamiento?</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="shop.html">Shop</a>
+                                 <a id="nav-sitios" class="nav-link" href="contact.html">Sitios Interesantes</a>
                               </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Contact Us</a>
-                              </li>
-                              <li class="nav-item d_none login_btn">
-                                 <a class="nav-link" href="#">Login</a>
-                              </li>
-                              <li class="nav-item d_none">
-                                 <a class="nav-link" href="#">Register</a>
-                              </li>
-                              <li class="nav-item d_none sea_icon">
-                                 <a class="nav-link" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i><i class="fa fa-search" aria-hidden="true"></i></a>
+                              <li class="nav-item dropdown">
+                                 <a class="nav-link dropdown-toggle" href="#" id="idiomaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="images/es.png" alt="Español" style="width:20px; vertical-align:middle;"> <!-- Bandera España -->
+                                 </a>
+                                 <div class="dropdown-menu" aria-labelledby="idiomaDropdown">
+                                    <a class="dropdown-item" href="#"><img src="images/es.png" alt="Español" style="width:20px; vertical-align:middle;"> Español</a>
+                                    <a class="dropdown-item" href="#"><img src="images/gb.png" alt="Inglés" style="width:20px; height:13px; vertical-align:middle;"> Inglés</a>
+                                    <a class="dropdown-item" href="#"><img src="images/fr.png" alt="Francés" style="width:20px; vertical-align:middle;"> Francés</a>
+                                    <a class="dropdown-item" href="#"><img src="images/de.png" alt="Alemán" style="width:20px; vertical-align:middle;"> Alemán</a>
+                                 </div>
                               </li>
                            </ul>
                         </div>
@@ -105,42 +104,21 @@
                   <div class="container">
                      <div class="carousel-caption">
                         <div class="text-bg">
-                           <h1> <span class="blu">Welcome <br></span>To Our Sunglasses</h1>
-                           <figure><img src="images/banner_img.png" alt="#"/></figure>
-                           <a class="read_more" href="#">Shop Now</a>
+                           <h1> <span id="banner-span" class="blu">Gracias <br></span><span id="banner-subtitle">Por Elegirnos</span></h1>
+                           <figure><img src="images/banner_peugeot (1).png" alt="#"/></figure>
+                           <a class="read_more" href="#">Dejar Review</a>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <div class="carousel-caption">
-                        <div class="text-bg">
-                           <h1> <span class="blu">Welcome <br></span>To Our Sunglasses</h1>
-                           <figure><img src="images/banner_img.png" alt="#"/></figure>
-                           <a class="read_more" href="#">Shop Now</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <div class="carousel-caption">
-                        <div class="text-bg">
-                           <h1> <span class="blu">Welcome <br></span>To Our Sunglasses</h1>
-                           <figure><img src="images/banner_img.png" alt="#"/></figure>
-                           <a class="read_more" href="#">Shop Now</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+ 
             </div>
-            <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+           <!-- <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </a>
             <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
             <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </a>
+            </a>-->
          </div>
       </section>
       <!-- end banner -->
@@ -433,6 +411,102 @@
            });
          }
       </script>
+      <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            const idiomaDropdown = document.getElementById('idiomaDropdown');
+            const idiomaItems = document.querySelectorAll('.dropdown-menu .dropdown-item');
+
+            idiomaItems.forEach(item => {
+               item.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  // Cambia la bandera y el texto en el nav principal
+                  const img = this.querySelector('img');
+                  idiomaDropdown.innerHTML = img.outerHTML;
+               });
+            });
+         });
+      </script>
+      <script>
+         const traducciones = {
+         es: {
+            "banner-span": "Gracias <br>",
+            "banner-subtitle": "Por Elegirnos",
+            "banner-title": "Gracias <br>Por Elegirnos",
+            "read-review": "Dejar Review",
+            "nav-inicio": "Inicio",
+            "nav-aeropuerto": "Aeropuerto",
+            "nav-aparcamiento": "¿Aparcamiento?",
+            "nav-transporte": "Transporte Público",
+            "nav-sitios": "Sitios Interesantes",
+            // Añade aquí más ids y traducciones
+         },
+         gb: {
+            "banner-span": "Thank you <br>",
+            "banner-subtitle": "For Choosing Us",
+            "banner-title": "Thank you <br>For Choosing Us",
+            "read-review": "Leave Review",
+            "nav-inicio": "Home",
+            "nav-aeropuerto": "Airport",
+            "nav-aparcamiento": "Parking?",
+            "nav-transporte": "Public Transport",
+            "nav-sitios": "Interesting Places",
+         },
+         fr: {
+            "banner-span": "Merci <br>",
+            "banner-subtitle": "De Nous Choisir",
+            "banner-title": "Merci <br>De Nous Choisir",
+            "read-review": "Laisser un avis",
+            "nav-inicio": "Accueil",
+            "nav-aeropuerto": "Aéroport",
+            "nav-aparcamiento": "Parking?",
+            "nav-transporte": "Transports Publics",
+            "nav-sitios": "Lieux Intéressants",
+         },
+         de: {
+            "banner-span": "Danke <br>",
+            "banner-subtitle": "Für Ihre Wahl",
+            "banner-title": "Danke <br>Für Ihre Wahl",
+            "read-review": "Bewertung abgeben",
+            "nav-inicio": "Startseite",
+            "nav-aeropuerto": "Flughafen",
+            "nav-aparcamiento": "Parkplatz?",
+            "nav-transporte": "Öffentliche Verkehrsmittel",
+            "nav-sitios": "Interessante Orte",
+         }
+         };
+
+         function cambiarIdioma(idioma) {
+         const textos = traducciones[idioma];
+         for (const id in textos) {
+            const el = document.getElementById(id);
+            if (el) {
+               el.innerHTML = textos[id];
+            }
+         }
+         }
+
+         // Modifica el script del selector de idioma:
+         document.addEventListener('DOMContentLoaded', function() {
+         const idiomaDropdown = document.getElementById('idiomaDropdown');
+         const idiomaItems = document.querySelectorAll('.dropdown-menu .dropdown-item');
+
+         idiomaItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+               e.preventDefault();
+               const img = this.querySelector('img');
+               idiomaDropdown.innerHTML = img.outerHTML;
+               // Detecta el idioma por el nombre del archivo de la bandera
+               let idioma = 'es';
+               if (img.src.includes('gb')) idioma = 'gb';
+               if (img.src.includes('fr')) idioma = 'fr';
+               if (img.src.includes('de')) idioma = 'de';
+               cambiarIdioma(idioma);
+            });
+         });
+         // Idioma por defecto
+         cambiarIdioma('es');
+         });
+         </script>
       <!-- google map js -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
       <!-- end google map js --> 
